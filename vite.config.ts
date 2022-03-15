@@ -5,9 +5,14 @@ import Unocss from 'unocss/vite'
 import transformerDirective from '@unocss/transformer-directives'
 import presetUno from '@unocss/preset-uno'
 import presetIcons from '@unocss/preset-icons'
+import path from 'path'
 
-// https://vitejs.dev/config/
 export default defineConfig({
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, './src'),
+    },
+  },
   plugins: [
     vue(),
     AutoImport({

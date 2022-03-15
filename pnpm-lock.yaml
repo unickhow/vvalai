@@ -11,10 +11,12 @@ specifiers:
   unplugin-auto-import: ^0.6.6
   vite: ^2.8.0
   vue: ^3.2.25
+  vue-router: ^4.0.13
   vue-tsc: ^0.29.8
 
 dependencies:
   vue: 3.2.31
+  vue-router: 4.0.13_vue@3.2.31
 
 devDependencies:
   '@iconify-json/carbon': 1.1.2
@@ -400,6 +402,10 @@ packages:
     dependencies:
       '@vue/compiler-dom': 3.2.31
       '@vue/shared': 3.2.31
+    dev: false
+
+  /@vue/devtools-api/6.1.3:
+    resolution: {integrity: sha512-79InfO2xHv+WHIrH1bHXQUiQD/wMls9qBk6WVwGCbdwP7/3zINtvqPNMtmSHXsIKjvUAHc8L0ouOj6ZQQRmcXg==}
     dev: false
 
   /@vue/reactivity-transform/3.2.31:
@@ -1749,6 +1755,15 @@ packages:
       vscode-pug-languageservice: 0.29.8
       vscode-typescript-languageservice: 0.29.8
     dev: true
+
+  /vue-router/4.0.13_vue@3.2.31:
+    resolution: {integrity: sha512-LmXrC+BkDRLak+d5xTMgUYraT3Nj0H/vCbP+7usGvIl9Viqd1UP6AsP0i69pSbn9O0dXK/xCdp4yPw21HqV9Jw==}
+    peerDependencies:
+      vue: ^3.2.0
+    dependencies:
+      '@vue/devtools-api': 6.1.3
+      vue: 3.2.31
+    dev: false
 
   /vue-tsc/0.29.8_typescript@4.6.2:
     resolution: {integrity: sha512-pT0wLRjvRuSmB+J4WJT6uuV9mO0KtSSXEAtaVXZQzyk5+DJdbLIQTbRce/TXSkfqt1l1WogO78RjtOJFiMCgfQ==}

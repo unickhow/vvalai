@@ -7,12 +7,22 @@
       </h1>
       <HelloWorld class="mb-16" slogan="Focus on idea instead scaffolding." />
 
-      <div class="text-center">
+      <div class="text-center mb-16">
         <h2 class="flex items-center justify-center color-[#2E4052]">
           <i class="i-carbon-tool-box mr-2"></i>
           <b>Prepacks</b>
         </h2>
         <p>{{ prepacks.join(', ') }}</p>
+      </div>
+
+      <div class="text-center">
+        <div class="inline-flex mb-8">
+          <router-link to="/" class="page-link px-4 color-[#078abc] underline-none decoration-none">Home</router-link>
+          <router-link to="/about" class="page-link px-4 color-[#078abc] underline-none decoration-none">About</router-link>
+        </div>
+        <div class="shadow bg-[#fff] py-12">
+          <router-view />
+        </div>
       </div>
 
       <div class="text-center flex justify-center mt-20">
@@ -48,5 +58,9 @@ h1 b {
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.page-link.router-link-active {
+  @apply font-bold;
 }
 </style>
