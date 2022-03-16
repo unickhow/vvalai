@@ -24,9 +24,12 @@
       </div>
 
       <div class="text-center">
-        <div class="inline-flex mb-8">
-          <router-link to="/" class="page-link px-4 color-[#078abc] underline-none decoration-none">Home</router-link>
-          <router-link to="/about" class="page-link px-4 color-[#078abc] underline-none decoration-none">About</router-link>
+        <div class="inline-flex items-center mb-8">
+          <button class="is-button" @click="toggleLocale">
+            <i class="i-carbon-language block text-2xl"></i>
+          </button>
+          <router-link to="/" class="page-link px-4 color-[#078abc] underline-none decoration-none">{{ t('route.home') }}</router-link>
+          <router-link to="/about" class="page-link px-4 color-[#078abc] underline-none decoration-none">{{ t('route.about') }}</router-link>
         </div>
         <div class="flex justify-center items-center mb-4">
           <button class="is-button font-bold" @click="counter.decrement">-</button>
@@ -50,6 +53,12 @@
 <script setup lang="ts">
 import HelloWorld from './components/HelloWorld.vue'
 import { useCounter } from './stores/counter'
+import { useI18n } from 'vue-i18n'
+
+const { t, locale } = useI18n()
+const toggleLocale = () => {
+  locale.value = locale.value === 'en' ? 'zh-tw' : 'en'
+}
 
 const prepacks = ref([
   {
