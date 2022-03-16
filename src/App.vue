@@ -12,7 +12,15 @@
           <i class="i-carbon-tool-box mr-2"></i>
           <b>Prepacks</b>
         </h2>
-        <p>{{ prepacks.join(', ') }}</p>
+        <div class="flex flex-wrap justify-center">
+          <a
+            v-for="pack in prepacks"
+            :key="pack.name"
+            class="p-2 decoration-none opacity-50 hover:opacity-100 hover:font-bold transition-opacity"
+            :style="{ color: pack.brandColor }"
+            :href="pack.url"
+            target="_blank">{{ pack.name }}</a>
+        </div>
       </div>
 
       <div class="text-center">
@@ -38,11 +46,31 @@
 import HelloWorld from './components/HelloWorld.vue'
 
 const prepacks = ref([
-  'Vite',
-  'Vue 3',
-  'Typescript',
-  'Unocss',
-  'Carbon Icons',
+  {
+    name: 'Vite',
+    url: 'https://vitejs.dev/',
+    brandColor: '#bd35fe'
+  },
+  {
+    name: 'Vue 3',
+    url: 'https://vuejs.org/',
+    brandColor: '#42b883'
+  },
+  {
+    name: 'Typescript',
+    url: 'https://www.typescriptlang.org/',
+    brandColor: '#3178c6'
+  },
+  {
+    name: 'Unocss',
+    url: 'https://unocss.antfu.me/',
+    brandColor: '#888'
+  },
+  {
+    name: 'Carbon Icons',
+    url: 'https://icon-sets.iconify.design/carbon/',
+    brandColor: '#000'
+  }
 ])
 </script>
 
