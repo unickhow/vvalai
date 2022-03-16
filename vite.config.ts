@@ -23,7 +23,10 @@ export default defineConfig({
         presetUno(),
         presetIcons()
       ],
-      transformers: [transformerDirective()]
+      transformers: [transformerDirective()],
+      shortcuts: {
+        'is-button': 'py-1 px-2 text-gray-400 shadow-md border-none bg-white rounded-full cursor-pointer hover:text-gray-700 active:shadow'
+      }
     })
   ]
 })

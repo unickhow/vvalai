@@ -16,7 +16,7 @@
           <a
             v-for="pack in prepacks"
             :key="pack.name"
-            class="p-2 decoration-none opacity-50 hover:opacity-100 hover:font-bold transition-opacity"
+            class="p-2 decoration-none opacity-70 hover:opacity-100 hover:font-bold transition-opacity"
             :style="{ color: pack.brandColor }"
             :href="pack.url"
             target="_blank">{{ pack.name }}</a>
@@ -27,6 +27,11 @@
         <div class="inline-flex mb-8">
           <router-link to="/" class="page-link px-4 color-[#078abc] underline-none decoration-none">Home</router-link>
           <router-link to="/about" class="page-link px-4 color-[#078abc] underline-none decoration-none">About</router-link>
+        </div>
+        <div class="flex justify-center items-center mb-4">
+          <button class="is-button font-bold" @click="counter.decrement">-</button>
+          <code class="px-4 text-2xl">{{ counter.count }}</code>
+          <button class="is-button font-bold" @click="counter.increment">+</button>
         </div>
         <div class="shadow bg-[#fff] py-12">
           <router-view />
@@ -44,6 +49,7 @@
 
 <script setup lang="ts">
 import HelloWorld from './components/HelloWorld.vue'
+import { useCounter } from './stores/counter'
 
 const prepacks = ref([
   {
@@ -70,8 +76,16 @@ const prepacks = ref([
     name: 'Carbon Icons',
     url: 'https://icon-sets.iconify.design/carbon/',
     brandColor: '#000'
+  },
+  {
+    name: 'Pinia',
+    url: 'https://pinia.vuejs.org/',
+    brandColor: '#ffd859'
   }
 ])
+
+const counter = useCounter()
+
 </script>
 
 <style>
