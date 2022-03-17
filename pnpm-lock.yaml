@@ -7,6 +7,7 @@ specifiers:
   '@unocss/transformer-directives': ^0.28.1
   '@vitejs/plugin-vue': ^2.2.0
   '@vueuse/core': ^8.1.1
+  '@vueuse/head': ^0.7.5
   pinia: ^2.0.12
   typescript: ^4.5.4
   unocss: ^0.28.1
@@ -19,6 +20,7 @@ specifiers:
 
 dependencies:
   '@vueuse/core': 8.1.1_vue@3.2.31
+  '@vueuse/head': 0.7.5_vue@3.2.31
   pinia: 2.0.12_typescript@4.6.2+vue@3.2.31
   vue: 3.2.31
   vue-i18n: 9.1.9_vue@3.2.31
@@ -528,6 +530,14 @@ packages:
       '@vueuse/shared': 8.1.1_vue@3.2.31
       vue: 3.2.31
       vue-demi: 0.12.4_vue@3.2.31
+    dev: false
+
+  /@vueuse/head/0.7.5_vue@3.2.31:
+    resolution: {integrity: sha512-L+XQ5Act0nT/ZyO8Qo10J4FyM1qPOyQb6MT4MMn6+AITzrStpmKs/nUDDLJKD/rCcNWl/65XbdQm4T2vKp3VOQ==}
+    peerDependencies:
+      vue: '>=3'
+    dependencies:
+      vue: 3.2.31
     dev: false
 
   /@vueuse/metadata/8.1.1:
