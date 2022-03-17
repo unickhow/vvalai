@@ -1,17 +1,20 @@
-import { createApp } from 'vue'
 import App from './App.vue'
 import 'uno.css'
-import router from './route'
-import { createPinia } from 'pinia'
-import { i18n } from './locales'
-import { createHead } from '@vueuse/head'
+import { ViteSSG } from 'vite-ssg'
 
-const head = createHead()
-const app = createApp(App)
+import { routes } from './route'
 
-app
-  .use(router)
-  .use(head)
-  .use(createPinia())
-  .use(i18n)
-  .mount('#app')
+export const createApp = ViteSSG(
+  App,
+  {
+    routes
+  },
+  (ctx) => {
+    Object.values(import.meta.globEager('./modules/*.ts')).forEach(i => i.install?.(ctx))
+    // if (ctx.isClient) {
+    //   ctx.router.beforeEach((to, from) => {
+    //     console.log('beforeEach', to, from)
+    //   })
+    // }
+  }
+)
