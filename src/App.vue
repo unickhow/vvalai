@@ -90,6 +90,11 @@ const prepacks = ref([
     name: 'Pinia',
     url: 'https://pinia.vuejs.org/',
     brandColor: '#ffd859'
+  },
+  {
+    name: 'VueUse',
+    url: 'https://vueuse.org/',
+    brandColor: '#42b883'
   }
 ])
 
