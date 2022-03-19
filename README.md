@@ -1,6 +1,6 @@
-# Van
+# VValai
 
-Vite + Vue3 + Typescript for starter template.
+「哇來」 Vite + Vue3 + Typescript for starter template.
 
 checkout to `ssr` branch for SSG version
 
