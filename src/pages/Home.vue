@@ -12,11 +12,11 @@ import { useCounter } from '../stores/counter'
 
 useHead({
   // Can be static or computed
-  title: 'Home page | Van',
+  title: 'Home page | VValai',
   meta: [
     {
       name: 'description',
-      content: 'This is van home page.'
+      content: 'This is VValai home page.'
     }
   ]
 })

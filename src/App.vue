@@ -3,7 +3,7 @@
     <div class="container mx-auto">
       <h1 class="flex items-center justify-center">
         <i class="text-5xl i-carbon-chat-bot mr-2 color-[#ff7800]"></i>
-        <b>VAN starter template</b>
+        <b>VVALAI starter template</b>
       </h1>
       <HelloWorld class="mb-16" slogan="Focus on idea instead scaffolding." />
 
