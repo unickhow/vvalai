@@ -28,5 +28,9 @@ export default defineConfig({
         'is-button': 'py-1 px-2 text-gray-400 shadow-md border-none bg-white rounded-full cursor-pointer hover:text-gray-700 active:shadow'
       }
     })
-  ]
+  ],
+  server: {
+    port: 13845,
+    open: true
+  }
 })
