@@ -1,10 +1,10 @@
 # VValai
 
-「哇來」 Vite + Vue3 + Typescript for starter template.
+「哇來」 Vite@7 + Vue@3 + Typescript for starter template.
 
 ## Start
 ```
-npx degit unickhow/vvalai <project_name>
+npx degit unickhow/vvalai@next <project_name>
 
 cd <project_name>
 

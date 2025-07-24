@@ -1,36 +1,34 @@
+import { fileURLToPath, URL } from 'node:url'
+
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
+import vueJsx from '@vitejs/plugin-vue-jsx'
+import vueDevTools from 'vite-plugin-vue-devtools'
+import UnoCSS from 'unocss/vite'
 import AutoImport from 'unplugin-auto-import/vite'
-import Unocss from 'unocss/vite'
-import transformerDirective from '@unocss/transformer-directives'
-import presetUno from '@unocss/preset-uno'
-import presetIcons from '@unocss/preset-icons'
-import path from 'path'
 
+
+// https://vite.dev/config/
 export default defineConfig({
-  resolve: {
-    alias: {
-      '@': path.resolve(__dirname, './src'),
-    },
-  },
   plugins: [
     vue(),
+    vueJsx(),
+    vueDevTools(),
+    UnoCSS(),
     AutoImport({
-      imports: ['vue']
-    }),
-    Unocss({
-      presets: [
-        presetUno(),
-        presetIcons()
+      imports: [
+        'vue',
+        'vue-router',
       ],
-      transformers: [transformerDirective()],
-      shortcuts: {
-        'is-button': 'py-1 px-2 text-gray-400 shadow-md border-none bg-white rounded-full cursor-pointer hover:text-gray-700 active:shadow'
-      }
-    })
+      dts: true,
+    }),
   ],
+  resolve: {
+    alias: {
+      '@': fileURLToPath(new URL('./src', import.meta.url))
+    },
+  },
   server: {
     port: 13845,
-    open: true
   }
 })

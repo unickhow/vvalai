@@ -1,17 +1,19 @@
-import { createApp } from 'vue'
-import App from './App.vue'
-import 'uno.css'
-import router from './route'
-import { createPinia } from 'pinia'
-import { i18n } from './locales'
-import { createHead } from '@vueuse/head'
+import './assets/main.css'
 
-const head = createHead()
+import { createApp } from 'vue'
+import { createPinia } from 'pinia'
+
+import App from './App.vue'
+import router from './router'
+import 'virtual:uno.css'
+import { createHead } from '@unhead/vue/client'
+import { i18n } from './locales'
+
 const app = createApp(App)
 
-app
-  .use(router)
-  .use(head)
-  .use(createPinia())
-  .use(i18n)
-  .mount('#app')
+app.use(createPinia())
+app.use(router)
+app.use(i18n)
+app.use(createHead())
+
+app.mount('#app')

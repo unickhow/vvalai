@@ -1,23 +1,15 @@
-import { defineStore, acceptHMRUpdate } from 'pinia'
+import { ref, computed } from 'vue'
+import { defineStore } from 'pinia'
 
-export const useCounter = defineStore({
-  id: 'counter',
-  state: () => ({
-    count: 0
-  }),
-  getters: {
-    getCountDouble: state => state.count * 2
-  },
-  actions: {
-    increment() {
-      this.count++
-    },
-    decrement() {
-      this.count--
-    }
+export const useCounterStore = defineStore('counter', () => {
+  const count = ref(0)
+  const getCountDouble = computed(() => count.value * 2)
+  function increment() {
+    count.value++
   }
-})
+  function decrement() {
+    count.value--
+  }
 
-if (import.meta.hot) {
-  import.meta.hot.accept(acceptHMRUpdate(useCounter, import.meta.hot))
-}
+  return { count, getCountDouble, increment, decrement }
+})

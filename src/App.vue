@@ -1,3 +1,55 @@
+<script setup lang="ts">
+import HelloWorld from './components/HelloWorld.vue'
+import { useCounterStore } from './stores/counter'
+import { useI18n } from 'vue-i18n'
+
+const { t, locale } = useI18n()
+const toggleLocale = () => {
+  locale.value = locale.value === 'en' ? 'zh_tw' : 'en'
+}
+
+const prepacks = ref([
+  {
+    name: 'Vite',
+    url: 'https://vitejs.dev/',
+    brandColor: '#bd35fe'
+  },
+  {
+    name: 'Vue 3',
+    url: 'https://vuejs.org/',
+    brandColor: '#42b883'
+  },
+  {
+    name: 'Typescript',
+    url: 'https://www.typescriptlang.org/',
+    brandColor: '#3178c6'
+  },
+  {
+    name: 'Unocss',
+    url: 'https://unocss.antfu.me/',
+    brandColor: '#888'
+  },
+  {
+    name: 'Carbon Icons',
+    url: 'https://icon-sets.iconify.design/carbon/',
+    brandColor: '#000'
+  },
+  {
+    name: 'Pinia',
+    url: 'https://pinia.vuejs.org/',
+    brandColor: '#ffd859'
+  },
+  {
+    name: 'VueUse',
+    url: 'https://vueuse.org/',
+    brandColor: '#42b883'
+  }
+])
+
+const counter = useCounterStore()
+
+</script>
+
 <template>
   <main class="mt-[5rem]">
     <div class="container mx-auto">
@@ -5,7 +57,7 @@
         <i class="text-5xl i-carbon-chat-bot mr-2 color-[#ff7800]"></i>
         <b>VVALAI starter template</b>
       </h1>
-      <HelloWorld class="mb-16" slogan="Focus on idea instead scaffolding." />
+      <HelloWorld class="mb-16" msg="Focus on idea instead scaffolding." />
 
       <div class="text-center mb-16">
         <h2 class="flex items-center justify-center color-[#2E4052]">
@@ -49,58 +101,6 @@
     </div>
   </main>
 </template>
-
-<script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
-import { useCounter } from './stores/counter'
-import { useI18n } from 'vue-i18n'
-
-const { t, locale } = useI18n()
-const toggleLocale = () => {
-  locale.value = locale.value === 'en' ? 'zh-tw' : 'en'
-}
-
-const prepacks = ref([
-  {
-    name: 'Vite',
-    url: 'https://vitejs.dev/',
-    brandColor: '#bd35fe'
-  },
-  {
-    name: 'Vue 3',
-    url: 'https://vuejs.org/',
-    brandColor: '#42b883'
-  },
-  {
-    name: 'Typescript',
-    url: 'https://www.typescriptlang.org/',
-    brandColor: '#3178c6'
-  },
-  {
-    name: 'Unocss',
-    url: 'https://unocss.antfu.me/',
-    brandColor: '#888'
-  },
-  {
-    name: 'Carbon Icons',
-    url: 'https://icon-sets.iconify.design/carbon/',
-    brandColor: '#000'
-  },
-  {
-    name: 'Pinia',
-    url: 'https://pinia.vuejs.org/',
-    brandColor: '#ffd859'
-  },
-  {
-    name: 'VueUse',
-    url: 'https://vueuse.org/',
-    brandColor: '#42b883'
-  }
-])
-
-const counter = useCounter()
-
-</script>
 
 <style>
 html, body {
