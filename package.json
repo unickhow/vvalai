@@ -1,19 +1,18 @@
 {
   "name": "vvalai",
   "private": true,
-  "packageManager": "pnpm@6.32.3",
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
     "preview": "vite preview"
   },
   "dependencies": {
-    "@vueuse/core": "^8.1.1",
-    "@vueuse/head": "^0.7.5",
-    "pinia": "^2.0.12",
-    "vue": "^3.2.25",
-    "vue-i18n": "9",
-    "vue-router": "^4.0.13"
+    "@vueuse/core": "8.1.1",
+    "@vueuse/head": "0.7.5",
+    "pinia": "~2.0.12",
+    "vue": "~3.2.25",
+    "vue-i18n": "^9",
+    "vue-router": "4.0.13"
   },
   "devDependencies": {
     "@iconify-json/carbon": "^1.1.2",
@@ -21,10 +20,10 @@
     "@unocss/preset-uno": "^0.28.1",
     "@unocss/transformer-directives": "^0.28.1",
     "@vitejs/plugin-vue": "^2.2.0",
-    "typescript": "^4.5.4",
+    "typescript": "~4.5.4",
     "unocss": "^0.45.13",
     "unplugin-auto-import": "^0.6.6",
     "vite": "^4.0.3",
-    "vue-tsc": "^0.29.8"
+    "vue-tsc": "~0.29.8"
   }
 }
